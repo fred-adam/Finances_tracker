@@ -1,36 +1,157 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<!doctype html>
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<html
+  lang="en"
+  class="layout-menu-fixed layout-compact"
+  data-assets-path="../assets/"
+  data-template="vertical-menu-template-free">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+            <title>{{ config('app.name', 'Finances-Tracker') }}</title>
 
-        <!-- Scripts -->
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap.css/iconify-icons.css') }}" />
+
+    <!-- Core CSS -->
+    <!-- build:css assets/vendor/css/theme.css  -->
+
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap.css/core.css') }}" />
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap.css/demo.css') }}"/>
+
+    <!-- Vendors CSS -->
+
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap.css/perfect-scrollbar.css') }}" />
+
+    <!-- endbuild -->
+
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap.css/apex-charts.css') }}" />
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="{{ asset('vendor/bootstrap.bundle.min.js/helpers.js') }}"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+
+    <script src="{{ asset('vendor/bootstrap.bundle.min.js/config.js') }}"></script>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
+
+  </head>
+  <body>
+      <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
-
-            <!-- Page Content -->
             <main>
-                {{ $slot }}
-            </main>
+        @yield('content')  </main>
+
+        <footer class="content-footer footer bg-footer-theme">
+              <div class="container-xxl">
+                <div
+                  class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
+                  <div class="mb-2 mb-md-0">
+                    ©
+                    <script>
+                      document.write(new Date().getFullYear());
+                    </script>
+                    , made with ❤️ by
+                    <a href="https://themeselection.com" target="_blank" class="footer-link">ThemeSelection</a>
+                  </div>
+                  <div class="d-none d-lg-inline-block">
+                    <a
+                      href="https://themeselection.com/item/category/admin-templates/"
+                      target="_blank"
+                      class="footer-link me-4"
+                      >Admin Templates</a
+                    >
+
+                    <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
+                    <a
+                      href="https://themeselection.com/item/category/bootstrap-admin-templates/"
+                      target="_blank"
+                      class="footer-link me-4"
+                      >Bootstrap Dashboard</a
+                    >
+
+                    <a
+                      href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/documentation/"
+                      target="_blank"
+                      class="footer-link me-4"
+                      >Documentation</a
+                    >
+
+                    <a
+                      href="https://github.com/themeselection/sneat-bootstrap-html-admin-template-free/issues"
+                      target="_blank"
+                      class="footer-link"
+                      >Support</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </footer>
+            <!-- / Footer -->
+
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!-- Content wrapper -->
         </div>
-    </body>
+        <!-- / Layout page -->
+      </div>
+
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+    <div class="buy-now">
+      <a
+        href="https://themeselection.com/item/sneat-dashboard-pro-bootstrap/"
+        target="_blank"
+        class="btn btn-danger btn-buy-now"
+        >Upgrade to Pro</a
+      >
+    </div>
+
+    <!-- Core JS -->
+
+    <script src="{{ asset('vendor/bootstrap.bundle.min.js/jquery.js') }}"></script>
+
+    <script src="{{ asset('vendor/bootstrap.bundle.min.js/popper.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap.bundle.min.js/bootstrap.js') }}"></script>
+
+    <script src="{{ asset('vendor/bootstrap.bundle.min.js/perfect-scrollbar.js') }}"></script>
+
+    <script src="{{ asset('vendor/bootstrap.bundle.min.js/menu.js') }}"></script>
+
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="{{ asset('vendor/bootstrap.bundle.min.js/apexcharts.js) }}"></script>
+
+    <!-- Main JS -->
+
+    <script src="{{ asset('vendor/bootstrap.bundle.min.js/main.js') }}"></script>
+
+    <!-- Page JS -->
+    <script src="{{ asset('vendor/bootstrap.bundle.min.js/dashboards-analytics.js'}}"></script>
+
+    <!-- Place this tag before closing body tag for github widget button. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
 </html>
