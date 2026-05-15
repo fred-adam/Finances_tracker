@@ -27,7 +27,7 @@
       rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="{{ asset('vendor/css-vendor/iconify-icons.css') }}" />
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <!-- Core CSS -->
     <!-- build:css assets/vendor/css/theme.css  -->
 
@@ -54,77 +54,32 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
   </head>
-  <body>
-      <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
-
-            <main>
-        @yield('content')  </main>
-
-        <footer class="content-footer footer bg-footer-theme">
-              <div class="container-xxl">
-                <div
-                  class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
-                  <div class="mb-2 mb-md-0">
-                    ©
-                    <script>
-                      document.write(new Date().getFullYear());
-                    </script>
-                    , made with ❤️ by
-                    <a href="https://themeselection.com" target="_blank" class="footer-link">ThemeSelection</a>
-                  </div>
-                  <div class="d-none d-lg-inline-block">
-                    <a
-                      href="https://themeselection.com/item/category/admin-templates/"
-                      target="_blank"
-                      class="footer-link me-4"
-                      >Admin Templates</a
-                    >
-
-                    <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                    <a
-                      href="https://themeselection.com/item/category/bootstrap-admin-templates/"
-                      target="_blank"
-                      class="footer-link me-4"
-                      >Bootstrap Dashboard</a
-                    >
-
-                    <a
-                      href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/documentation/"
-                      target="_blank"
-                      class="footer-link me-4"
-                      >Documentation</a
-                    >
-
-                    <a
-                      href="https://github.com/themeselection/sneat-bootstrap-html-admin-template-free/issues"
-                      target="_blank"
-                      class="footer-link"
-                      >Support</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </footer>
-            <!-- / Footer -->
-
-            <div class="content-backdrop fade"></div>
-          </div>
-          <!-- Content wrapper -->
-        </div>
-        <!-- / Layout page -->
-      </div>
-
-      <!-- Overlay -->
-      <div class="layout-overlay layout-menu-toggle"></div>
-    </div>
-    <!-- / Layout wrapper -->
-
+ <body>
   
+  <div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
+      
+      <!-- 1. Sidebar -->
+      @include('layouts.sidebar')
 
-    <!-- Core JS -->
+      <div class="layout-page">
+        
+        <!-- 2. Navbar -->
+        @include('layouts.navbar')
 
-    <script src="{{ asset('vendor/js-vendor/jquery.js') }}"></script>
+         <div class="content-wrapper">
+          <!-- 3. Main Content -->
+            @yield('content')
+          </div>
+
+          <!-- 4. Footer -->
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Keep all your scripts below here -->
+      <script src="{{ asset('vendor/js-vendor/jquery.js') }}"></script>
 
     <script src="{{ asset('vendor/js-vendor/popper.js') }}"></script>
     <script src="{{ asset('vendor/js-vendor/bootstrap.js') }}"></script>
@@ -132,10 +87,7 @@
     <script src="{{ asset('vendor/js-vendor/perfect-scrollbar.js') }}"></script>
 
     <script src="{{ asset('vendor/js-vendor/menu.js') }}"></script>
-
-    <!-- endbuild -->
-
-    <!-- Vendors JS -->
+      <!-- Vendors JS -->
     <script src="{{ asset('vendor/js-vendor/apexcharts.js') }}"></script>
 
     <!-- Main JS -->
@@ -143,9 +95,9 @@
     <script src="{{ asset('vendor/js-vendor/main.js') }}"></script>
 
     <!-- Page JS -->
-    <script src="{{ asset('vendor/js-vendor/dashboards-analytics.js') }}"></script>
+    <script src="{{ asset('vendor/js-vendor//dashboards-analytics.js') }}"></script>
 
-    <!-- Place this tag before closing body tag for github widget button. -->
+     <!-- Place this tag before closing body tag for github widget button. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-  </body>
+</body>
 </html>
